@@ -1,0 +1,42 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee {
+  animation: logo-marquee 24s linear infinite;
+}
+
+.logo-marquee-slow {
+  animation: logo-marquee 50s linear infinite;
+}
+
+.logo-strip:hover .logo-marquee-slow {
+  animation-play-state: paused;
+}
+
+.logo-strip-item {
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-strip-item:hover {
+  transform: scale(1.8) rotate(15deg);
+  filter: drop-shadow(0 0 12px #da2128) drop-shadow(0 0 24px #da212860) brightness(1.2);
+  opacity: 1 !important;
+  animation: logo-spin 0.6s ease forwards;
+}
+
+@keyframes logo-spin {
+  0%   { transform: scale(1.0) rotate(0deg); }
+  40%  { transform: scale(2.0) rotate(20deg); }
+  70%  { transform: scale(1.7) rotate(-5deg); }
+  100% { transform: scale(1.8) rotate(15deg); }
+}
