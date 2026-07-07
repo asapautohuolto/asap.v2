@@ -3,14 +3,15 @@ import { Menu, X, Phone, Mail, MapPin, Clock, ChevronRight, Wrench, Car, Shield,
 import autofitLogo from "../imports/autofitlogo.svg";
 import middleImage from "../middle.jpg";
 import lastImage from "../last.jpg";
-import heroImage from "../hero.jpg";
+import heroImage from "../hero.jpeg";
+import showcaseImage from "../showcase.jpg";
 import { translations, getInitialLocale, Locale } from "../i18n";
 
 const NAV_LINK_KEYS = [
   { key: "nav.palvelut", href: "#palvelut" },
   { key: "nav.miksi", href: "#miksi" },
   { key: "nav.yhteystiedot", href: "#yhteystiedot" },
-  { key: "nav.varaa", href: "https://wa.me/358454608554" },
+  { key: "nav.varaa", href: "https://wa.me/358404608554" },
 ];
 
 const SERVICES = [
@@ -73,7 +74,7 @@ export default function App() {
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
       {/* ── NAV ── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gray-100/95 backdrop-blur-sm border-b border-black/10">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-gray-800 backdrop-blur-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 shrink-0">
@@ -83,11 +84,11 @@ export default function App() {
               className="h-10 w-10 object-contain"
             />
             <span
-              className="text-black font-black tracking-tight text-lg leading-none"
+              className="text-white font-black tracking-tight text-lg leading-none"
               style={{ fontFamily: "'Roboto Slab', serif" }}
             >
               ASAP<br />
-              <span className="text-[#da2128] font-black text-base tracking-widest">AUTOHUOLTO</span>
+              <span className="text-black font-black text-base tracking-widest">AUTOHUOLTO</span>
             </span>
           </a>
 
@@ -97,7 +98,7 @@ export default function App() {
               <a
                 key={l.label}
                 href={l.href}
-                className="text-gray-700 hover:text-[#da2128] text-sm font-medium tracking-wide transition-colors"
+                className="text-white hover:text-[#da2128] text-sm font-medium tracking-wide transition-colors"
               >
                 {l.label}
               </a>
@@ -106,14 +107,14 @@ export default function App() {
 
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="tel:+358454608554"
-              className="flex items-center gap-2 text-gray-600 hover:text-[#da2128] text-sm transition-colors"
+              href="tel:+358404608554"
+              className="flex items-center gap-2 text-white hover:text-[#da2128] text-sm transition-colors"
             >
               <Phone className="w-4 h-4" />
-              045 460 8554
+              040 460 8554
             </a>
             <a
-              href="https://wa.me/358454608554"
+              href="https://wa.me/358404608554"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#da2128] hover:bg-[#b81a20] text-white px-5 py-2 text-sm font-semibold tracking-wide transition-colors"
@@ -140,7 +141,7 @@ export default function App() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden text-white"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Valikko"
           >
@@ -162,7 +163,7 @@ export default function App() {
               </a>
             ))}
             <a
-              href="https://wa.me/358454608554"
+              href="https://wa.me/358404608554"
               className="block bg-[#da2128] text-white text-center py-3 font-semibold tracking-wide mt-2"
               onClick={() => setMenuOpen(false)}
               target="_blank"
@@ -200,7 +201,7 @@ export default function App() {
           }}
         />
         {/* Dark overlay with red tint at bottom */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1a1210]/95 via-[#1a1210]/75 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-l from-[#1a1210]/95 via-[#1a1210]/75 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#1a1210] to-transparent" />
 
         {/* Red accent bar */}
@@ -208,20 +209,12 @@ export default function App() {
 
         <div className="relative max-w-7xl mx-auto px-6 py-28 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-10 bg-[#da2128]" />
-              <span className="text-[#da2128] text-xs font-semibold tracking-[0.25em] uppercase">
-                {t('hero.location')}
-              </span>
-            </div>
-
             <div className="space-y-4">
               <h1
-                className="text-5xl md:text-7xl font-black text-white leading-[0.95] tracking-tight"
+                className="text-4xl md:text-5xl font-black text-white leading-[0.95] tracking-tight"
                 style={{ fontFamily: "'Roboto Slab', serif" }}
               >
-                ASAP<br />
-                <span className="text-[#da2128]">{t('hero.service')}</span>
+                ASAP <span className="text-black">{t('hero.service')}</span>
               </h1>
               <div
                 className="text-3xl md:text-4xl leading-none"
@@ -231,7 +224,7 @@ export default function App() {
                   fontStyle: 'italic'
                 }}
               >
-                <span className="text-white">Auto</span><span className="text-black">fit</span>
+                <span className="text-white">Auto</span><span className="text-black">fit</span> <span className="text-white">Herttoniemi</span>
               </div>
             </div>
 
@@ -262,7 +255,6 @@ export default function App() {
             <div className="flex gap-8 mt-12 pt-8 border-t border-white/10">
               {[
                 { val: "15+", key: 'trust.years' },
-                { val: "4.9★", key: 'trust.rating' },
                 { bigKey: 'trust.makesBig', smallKey: 'trust.makesSmall' },
               ].map((b) => (
                 <div key={(b as any).key ?? (b as any).bigKey}>
@@ -318,7 +310,7 @@ export default function App() {
             </div>
             <div className="hidden md:block ml-auto mt-auto">
               <a
-                href="https://wa.me/358454608554"
+                href="https://wa.me/358404608554"
                 className="flex items-center gap-2 text-[#da2128] font-semibold hover:gap-4 transition-all"
               >
                 {t('nav.varaa')} <ChevronRight className="w-5 h-5" />
@@ -426,6 +418,15 @@ export default function App() {
         </div>
       </section>
 
+      {/* ── SHOWCASE SECTION ── */}
+      <section className="relative w-full py-16">
+        <img
+          src={showcaseImage}
+          alt="Showcase"
+          className="w-full h-auto object-cover"
+        />
+      </section>
+
       {/* ── CONTACT SECTION ── */}
       {/* ── AUTOFIT LOGO STRIP (gap between Why Us and Contact) ── */}
       <div className="logo-strip bg-[#0f0e0d] py-10 overflow-hidden">
@@ -475,7 +476,7 @@ export default function App() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <p className="text-sm uppercase tracking-[0.2em] text-white/50 mb-2">{t('contact.labels.phone')}</p>
-                <p className="text-white font-semibold">045 460 8554</p>
+                <p className="text-white font-semibold">040 460 8554</p>
               </div>
               <div className="min-w-0 rounded-[28px] bg-white/5 border border-white/10 p-6 backdrop-blur-md">
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#da2128]/10 text-[#da2128] mb-5">
@@ -502,7 +503,7 @@ export default function App() {
                 </div>
                 <p className="text-sm uppercase tracking-[0.2em] text-white/50 mb-2">{t('contact.labels.whatsapp')}</p>
                 <a
-                  href="https://wa.me/358454608554"
+                  href="https://wa.me/358404608554"
                   target="_blank"
                   rel="noreferrer"
                   className="text-white font-semibold break-words whitespace-normal hover:text-[#da2128]"
@@ -560,7 +561,7 @@ export default function App() {
       </footer>
 
             <a
-        href="https://wa.me/358454608554"
+        href="https://wa.me/358404608554"
         target="_blank"
         rel="noreferrer noopener"
         aria-label={t('contact.whatsappLabel')}
