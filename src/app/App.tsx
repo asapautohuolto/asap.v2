@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, X, Phone, Mail, MapPin, Clock, ChevronRight, Wrench, Car, Shield, Star, MessageCircle } from "lucide-react";
 import autofitLogo from "../imports/autofitlogo.svg";
 import lastImage from "../last.jpg";
-import heroImage from "../hero.jpeg";
+import heroImage from "../../mehmet-talha-onuk-wjauw9wi_2o-unsplash.jpg";
 import takuImage from "../../taku.jpeg";
 import suomiImage from "../suomi.png";
 import { translations, getInitialLocale, Locale } from "../i18n";
