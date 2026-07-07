@@ -312,33 +312,35 @@ export default function App() {
 
       {/* ── PRE-SERVICES IMAGE SECTION ── */}
       <section className="relative w-full py-12 bg-[#1a1210]">
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden min-h-[560px] md:min-h-[720px]">
           <img
             src={takuImage}
             alt="Autofit workshop"
-            className="w-full h-auto object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/35" />
-          <div className="absolute inset-0 flex items-end">
-            <div className="max-w-7xl mx-auto w-full px-6 pb-8 md:pb-14">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/25" />
+          <div className="absolute inset-x-0 bottom-0 z-10">
+            <div className="max-w-7xl mx-auto w-full px-6 pb-3 md:pb-6">
+              <div className="max-w-4xl">
               <h1
-                className="text-[#da2128] text-5xl md:text-7xl font-black tracking-tight mb-4"
+                className="text-[#da2128] text-4xl md:text-7xl font-black tracking-tight mb-4"
                 style={{ fontFamily: "'Roboto Slab', serif" }}
               >
                 {t('warranty.title')}
               </h1>
-              <p className="text-white text-base md:text-xl font-medium leading-relaxed max-w-4xl mb-3">
+              <p className="text-white text-sm md:text-xl font-medium leading-relaxed max-w-4xl mb-3">
                 {t('warranty.l1')}
               </p>
-              <p className="text-white text-base md:text-xl font-medium leading-relaxed max-w-4xl mb-3">
+              <p className="text-white text-sm md:text-xl font-medium leading-relaxed max-w-4xl mb-3">
                 {t('warranty.l2')}
               </p>
-              <p className="text-white text-base md:text-xl font-medium leading-relaxed max-w-4xl mb-3">
+              <p className="text-white text-sm md:text-xl font-medium leading-relaxed max-w-4xl mb-3">
                 {t('warranty.l3')}
               </p>
-              <p className="text-[#da2128] text-base md:text-xl font-medium leading-relaxed max-w-4xl">
+              <p className="text-[#da2128] text-sm md:text-xl font-medium leading-relaxed max-w-4xl">
                 {t('warranty.l4')}
               </p>
+              </div>
             </div>
           </div>
         </div>
