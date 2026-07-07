@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, Phone, Mail, MapPin, Clock, ChevronRight, Wrench, Car, Shield, Star, MessageCircle } from "lucide-react";
 import autofitLogo from "../imports/autofitlogo.svg";
-import middleImage from "../middle.jpg";
 import lastImage from "../last.jpg";
 import heroImage from "../hero.jpeg";
-import showcaseImage from "../showcase.jpg";
-import suomiImage from "../suomi.jpeg";
+import takuImage from "../../taku.jpeg";
+import suomiImage from "../suomi.png";
 import { translations, getInitialLocale, Locale } from "../i18n";
 
 const NAV_LINK_KEYS = [
@@ -75,8 +74,8 @@ export default function App() {
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
       {/* ── NAV ── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gray-800 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#a39d9d] backdrop-blur-sm border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between relative">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 shrink-0">
             <img
@@ -88,56 +87,34 @@ export default function App() {
               className="text-white font-black tracking-tight text-lg leading-none"
               style={{ fontFamily: "'Roboto Slab', serif" }}
             >
-              ASAP<br />
-              <span className="text-black font-black text-base tracking-widest">AUTOHUOLTO</span>
+              ASAP <span className="text-black font-black text-lg tracking-tight">AUTOHUOLTO</span><br />
+              <span className="text-white font-black text-sm tracking-wide" style={{ fontFamily: "'ITC Avant Garde Gothic', sans-serif", fontStyle: 'italic' }}>Auto<span className="text-black">fit Herttoniemi</span></span>
             </span>
           </a>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                className="text-white hover:text-[#da2128] text-sm font-medium tracking-wide transition-colors"
-              >
-                {l.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="hidden md:flex items-center gap-4">
+          {/* Center: phone + address — absolutely centered */}
+          <div className="hidden md:flex flex-col items-center gap-0.5 absolute left-1/2 -translate-x-1/2">
             <a
               href="tel:+358404608554"
-              className="flex items-center gap-2 text-white hover:text-[#da2128] text-sm transition-colors"
+              className="flex items-center gap-2 text-white hover:text-[#da2128] text-sm font-semibold transition-colors"
             >
               <Phone className="w-4 h-4" />
               040 460 8554
             </a>
             <a
-              href="https://wa.me/358404608554"
+              href="https://maps.google.com/?q=Sahaajankatu+39,+00880+Helsinki"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#da2128] hover:bg-[#b81a20] text-white px-5 py-2 text-sm font-semibold tracking-wide transition-colors"
+              className="flex items-center gap-1 text-white/70 hover:text-[#da2128] text-xs transition-colors"
             >
-              {t('nav.varaa')}
+              <MapPin className="w-3 h-3" />
+              Sahaajankatu 39, 00880 Helsinki
             </a>
-            <div className="flex items-center gap-2 ml-2">
-              <button
-                className={`px-2 py-1 rounded text-sm ${lang === 'fi' ? 'bg-[#da2128] text-white' : 'bg-white/90 text-black'}`}
-                onClick={() => setLang('fi')}
-                aria-label="Suomi"
-              >
-                FI
-              </button>
-              <button
-                className={`px-2 py-1 rounded text-sm ${lang === 'en' ? 'bg-[#da2128] text-white' : 'bg-white/90 text-black'}`}
-                onClick={() => setLang('en')}
-                aria-label="English"
-              >
-                EN
-              </button>
-            </div>
+          </div>
+
+          {/* Right: suomi image */}
+          <div className="hidden md:flex items-center">
+            <img src={suomiImage} alt="Suomi" className="h-12 w-auto object-contain" />
           </div>
 
           {/* Mobile toggle */}
@@ -148,6 +125,45 @@ export default function App() {
           >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
+        </div>
+
+        {/* Red nav banner */}
+        <div className="hidden md:block bg-[#da2128]">
+          <div className="max-w-7xl mx-auto px-6 h-10 flex items-center gap-8">
+            {navLinks.map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                className="text-white hover:text-white/70 text-sm font-medium tracking-wide transition-colors"
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href="https://wa.me/358404608554"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-auto text-white hover:text-white/70 text-sm font-semibold tracking-wide transition-colors"
+            >
+              {t('nav.varaa')}
+            </a>
+            <div className="flex items-center gap-2">
+              <button
+                className={`px-2 py-0.5 rounded text-xs ${lang === 'fi' ? 'bg-white text-[#da2128] font-bold' : 'bg-white/30 text-white'}`}
+                onClick={() => setLang('fi')}
+                aria-label="Suomi"
+              >
+                FI
+              </button>
+              <button
+                className={`px-2 py-0.5 rounded text-xs ${lang === 'en' ? 'bg-white text-[#da2128] font-bold' : 'bg-white/30 text-white'}`}
+                onClick={() => setLang('en')}
+                aria-label="English"
+              >
+                EN
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Mobile drawer */}
@@ -208,8 +224,8 @@ export default function App() {
         {/* Red accent bar */}
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#da2128]" />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-28 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
+        <div className="relative max-w-7xl mx-auto px-6 pt-40 pb-28 md:pt-48 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8 pl-8 md:pl-14">
             <div className="space-y-4">
               <h1
                 className="text-4xl md:text-5xl font-black text-white leading-[0.95] tracking-tight"
@@ -229,9 +245,11 @@ export default function App() {
               </div>
             </div>
 
-            <p className="text-white/60 text-base md:text-lg leading-relaxed max-w-lg">
-              {t('hero.tagline')}
-            </p>
+            <div className="text-white font-semibold text-base md:text-lg leading-relaxed max-w-lg space-y-3">
+              {t('hero.tagline').split('\n\n').map((para: string, i: number) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
 
             <div className="flex flex-wrap gap-4">
               <a
@@ -284,6 +302,43 @@ export default function App() {
                 alt="Autofit Service badge"
                 className="relative w-40 h-40 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain drop-shadow-2xl"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gray spacer between hero and pre-services image */}
+      <section className="h-10 md:h-14 bg-[#c9c4be]" aria-hidden="true" />
+
+      {/* ── PRE-SERVICES IMAGE SECTION ── */}
+      <section className="relative w-full py-12 bg-[#1a1210]">
+        <div className="relative overflow-hidden">
+          <img
+            src={takuImage}
+            alt="Autofit workshop"
+            className="w-full h-auto object-cover"
+          />
+          <div className="absolute inset-0 bg-black/35" />
+          <div className="absolute inset-0 flex items-end">
+            <div className="max-w-7xl mx-auto w-full px-6 pb-8 md:pb-14">
+              <h1
+                className="text-[#da2128] text-5xl md:text-7xl font-black tracking-tight mb-4"
+                style={{ fontFamily: "'Roboto Slab', serif" }}
+              >
+                {t('warranty.title')}
+              </h1>
+              <p className="text-white text-base md:text-xl font-medium leading-relaxed max-w-4xl mb-3">
+                {t('warranty.l1')}
+              </p>
+              <p className="text-white text-base md:text-xl font-medium leading-relaxed max-w-4xl mb-3">
+                {t('warranty.l2')}
+              </p>
+              <p className="text-white text-base md:text-xl font-medium leading-relaxed max-w-4xl mb-3">
+                {t('warranty.l3')}
+              </p>
+              <p className="text-[#da2128] text-base md:text-xl font-medium leading-relaxed max-w-4xl">
+                {t('warranty.l4')}
+              </p>
             </div>
           </div>
         </div>
@@ -372,19 +427,8 @@ export default function App() {
       </section>
 
       {/* ── WHY US ── */}
-      <section id="miksi" className="relative overflow-hidden bg-[#1a1210] py-24">
-        <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url(${middleImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              opacity: 0.85,
-              filter: 'brightness(0.2) contrast(1) saturate(1)'
-            }}
-          />
-        <div className="absolute inset-0 bg-[#1a1210]/30" />
-        <div className="relative max-w-7xl mx-auto px-6">
+      <section id="miksi" className="bg-[#1a1210] py-24">
+        <div className="max-w-7xl mx-auto px-6">
           <p className="text-[#da2128] text-xs font-semibold tracking-[0.25em] uppercase mb-3">
             {t('why.title')}
           </p>
@@ -423,15 +467,6 @@ export default function App() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* ── SHOWCASE SECTION ── */}
-      <section className="relative w-full py-16">
-        <img
-          src={showcaseImage}
-          alt="Showcase"
-          className="w-full h-auto object-cover"
-        />
       </section>
 
       {/* ── CONTACT SECTION ── */}
@@ -539,18 +574,20 @@ export default function App() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-[#1a1210] border-t border-white/10 py-24">
+      <footer className="bg-[#a39d9d] border-t border-white/10 py-24">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <img src={autofitLogo} alt="Autofit" className="h-8 w-8 object-contain" />
             <span
-              className="text-white/80 text-sm font-semibold"
+              className="text-black text-sm font-semibold"
               style={{ fontFamily: "'Roboto Slab', serif" }}
             >
-              ASAP Autohuolto
+              <span className="text-white">ASAP</span> Autohuolto
+              <br />
+              <span className="text-white font-black text-sm tracking-wide" style={{ fontFamily: "'ITC Avant Garde Gothic', sans-serif", fontStyle: 'italic' }}>Auto<span className="text-black">fit Herttoniemi</span></span>
             </span>
           </div>
-          <p className="text-white/30 text-xs text-center">
+          <p className="text-black text-xs text-center">
             © {new Date().getFullYear()} ASAP Autohuolto. Kaikki oikeudet pidätetään.
           </p>
           <div className="flex gap-6">
@@ -558,7 +595,7 @@ export default function App() {
               <a
                 key={l.label}
                 href={l.href}
-                className="text-white/40 hover:text-white/70 text-xs transition-colors"
+                className="text-black hover:text-black/70 text-xs transition-colors"
               >
                 {l.label}
               </a>

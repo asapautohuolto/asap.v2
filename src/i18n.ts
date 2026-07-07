@@ -5,7 +5,7 @@ export const translations = {
       location: 'Herttoniemi · Helsinki',
       service: 'AUTOHUOLTO',
       tagline:
-        'Rutiinihuollosta monimutkaisiin korjauksiin, me hoidamme autosi toimintakunnosta. Kaikki merkit, reilu hinta, nopea palvelu.',
+        'Autofit Herttoniemi huoltaa ja korjaa kaikki automerkit ammattitaidolla.\n\nMeillä on kokeneet mekaanikot ja autoalan insinööritaustainen työnjohtaja takaavat laadukkaan palvelun.',
       whatsapp: 'Varaa WhatsApp',
       call: 'Soita meille',
       autofit: 'Autofit',
@@ -36,6 +36,13 @@ export const translations = {
       title: 'Miksi valita meidät',
       heading: 'Halpa ja laadukas\nautohuolto Helsingissä'
     },
+    warranty: {
+      title: 'Takuu',
+      l1: 'Autofit-huollon jälkeen kaikki valmistajan antamat takuut ovat voimassa.',
+      l2: 'Huollot tehdään auton valmistajan antaman huolto-ohjelman mukaisesti.',
+      l3: 'Autofit myöntää huoltotyölle ja käyttämiilleen osille takuun.',
+      l4: 'Koska annamme asentamillemme osille ja työlle takuun, emme asenna asiakkaan itse tuomia osia.'
+    },
     services: {
       s1: { title: 'Määräaikaishuolto', desc: 'Kattava huolto valmistajan suositusten mukaan. Kaikki merkit ja mallit.' },
       s2: { title: 'Jarru- ja jousitustyöt', desc: 'Jarrujen tarkistus ja vaihto, iskunvaimentimien ja jousien korjaus.' },
@@ -57,7 +64,7 @@ export const translations = {
       location: 'Herttoniemi · Helsinki',
       service: 'CAR SERVICE',
       tagline:
-        'From routine maintenance to complex repairs — we keep your car running. All makes, fair prices, fast service.',
+        'Autofit Herttoniemi services and repairs all car makes with professional expertise.\n\nOur experienced mechanics and an engineering-trained service manager ensure top quality service.',
       whatsapp: 'Book via WhatsApp',
       call: 'Call us',
       autofit: 'Autofit',
@@ -87,6 +94,13 @@ export const translations = {
     why: {
       title: 'Why us',
       heading: 'Affordable and quality\ncar service in Helsinki'
+    },
+    warranty: {
+      title: 'Warranty',
+      l1: 'After Autofit service, all manufacturer warranties remain valid.',
+      l2: 'Services are carried out according to the manufacturer maintenance program.',
+      l3: 'Autofit provides a warranty for service work and installed parts.',
+      l4: 'Because we guarantee the parts we install and our workmanship, we do not install customer-supplied parts.'
     },
     services: {
       s1: { title: 'Routine maintenance', desc: 'Comprehensive servicing according to manufacturer recommendations. All makes and models.' },

@@ -187,8 +187,8 @@ export default function App() {
         {/* Red accent bar */}
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#da2128]" />
 
-        <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+        <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-40 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="pl-8 md:pl-14">
             <div className="flex items-center gap-3 mb-6">
               <span className="h-px w-10 bg-[#da2128]" />
               <span className="text-[#da2128] text-xs font-semibold tracking-[0.25em] uppercase">
@@ -204,10 +204,11 @@ export default function App() {
                 <span className="text-[#da2128]">{t('hero.service')}</span>
               </h1>
 
-            <p className="text-white/60 text-base md:text-lg leading-relaxed max-w-lg mb-10">
-              Rutiinihuollosta monimutkaisiin korjauksiin – me hoidämme autosi
-              toimintakunnosta. Kaikki merkit, reilu hinta, nopea palvelu.
-            </p>
+            <div className="text-white font-semibold text-base md:text-lg leading-relaxed max-w-lg mb-10 space-y-3">
+              {t('hero.tagline').split('\n\n').map((para: string, i: number) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
 
             <div className="flex flex-wrap gap-4">
               <a
