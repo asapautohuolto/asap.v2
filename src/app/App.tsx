@@ -5,6 +5,7 @@ import middleImage from "../middle.jpg";
 import lastImage from "../last.jpg";
 import heroImage from "../hero.jpeg";
 import showcaseImage from "../showcase.jpg";
+import suomiImage from "../suomi.jpeg";
 import { translations, getInitialLocale, Locale } from "../i18n";
 
 const NAV_LINK_KEYS = [
@@ -289,7 +290,13 @@ export default function App() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="palvelut" className="bg-[#f5f4f2] py-24">
+      <section id="palvelut" className="relative bg-[#f5f4f2] py-24">
+        {/* Suomi image in top right */}
+        <img
+          src={suomiImage}
+          alt="Suomi"
+          className="absolute top-4 right-4 md:top-8 md:right-8 h-24 md:h-32 w-auto object-contain opacity-80"
+        />
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-start gap-8 mb-16">
             <div>
