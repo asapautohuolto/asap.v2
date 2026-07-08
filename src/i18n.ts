@@ -34,7 +34,7 @@ export const translations = {
     },
     why: {
       title: 'Miksi valita meidät',
-      heading: 'Halpa ja laadukas\nautohuolto Helsingissä'
+      heading: 'AutoFit käyttää laadukkaita varaosia, jotka tarjoavat erinomaisen hinta-laatusuhteen. Emme käytä edullisimpia halpavaraosia, vaan valitsemme luotettavat ja kestävät osat ajoneuvosi parhaaksi.'
     },
     warranty: {
       title: 'Takuu',
@@ -93,7 +93,7 @@ export const translations = {
     },
     why: {
       title: 'Why us',
-      heading: 'Affordable and quality\ncar service in Helsinki'
+      heading: 'AutoFit uses high-quality spare parts that offer excellent value for money. We do not use the cheapest low-cost parts, but choose reliable and durable components for the best of your vehicle.'
     },
     warranty: {
       title: 'Warranty',

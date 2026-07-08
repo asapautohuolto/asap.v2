@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, Phone, Mail, MapPin, Clock, ChevronRight, Wrench, Car, Shield, Star, MessageCircle } from "lucide-react";
 import autofitLogo from "../imports/autofitlogo.svg";
-import lastImage from "../last.jpg";
-import heroImage from "../../mehmet-talha-onuk-wjauw9wi_2o-unsplash.jpg";
+import lastImage from "../2.jpg";
+import heroImage from "../../hero2.png";
 import takuImage from "../../taku.jpeg";
 import suomiImage from "../suomi.png";
 import { translations, getInitialLocale, Locale } from "../i18n";
@@ -112,19 +112,19 @@ export default function App() {
             </a>
           </div>
 
-          {/* Right: suomi image */}
-          <div className="hidden md:flex items-center">
-            <img src={suomiImage} alt="Suomi" className="h-12 w-auto object-contain" />
-          </div>
+          {/* Right: suomi image + mobile toggle */}
+          <div className="flex items-center gap-3">
+            <img src={suomiImage} alt="Suomi" className="h-10 md:h-12 w-auto object-contain" />
 
-          {/* Mobile toggle */}
-          <button
-            className="md:hidden text-white"
-            onClick={() => setMenuOpen((v) => !v)}
-            aria-label="Valikko"
-          >
-            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            {/* Mobile toggle */}
+            <button
+              className="md:hidden text-white"
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-label="Valikko"
+            >
+              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Red nav banner */}
@@ -225,7 +225,7 @@ export default function App() {
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#da2128]" />
 
         <div className="relative max-w-7xl mx-auto px-6 pt-40 pb-28 md:pt-48 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8 pl-8 md:pl-14">
+          <div className="space-y-8 pl-1 md:pl-4">
             <div className="space-y-4">
               <h1
                 className="text-4xl md:text-5xl font-black text-white leading-[0.95] tracking-tight"
@@ -253,7 +253,7 @@ export default function App() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://wa.me/358451234567"
+                href="https://wa.me/358404608554"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-[#da2128] hover:bg-[#b81a20] text-white px-7 py-4 font-semibold tracking-wide transition-colors"
@@ -262,7 +262,7 @@ export default function App() {
                 {t('hero.whatsapp')}
               </a>
               <a
-                href="tel:+358451234567"
+                href="tel:+358404608554"
                 className="flex items-center gap-2 border border-white/30 hover:border-white/60 text-white px-7 py-4 font-medium tracking-wide transition-colors"
               >
                 <Phone className="w-5 h-5" />
@@ -435,7 +435,7 @@ export default function App() {
             {t('why.title')}
           </p>
           <h2
-            className="text-4xl md:text-5xl font-black text-white leading-tight mb-16"
+            className="text-2xl md:text-3xl font-black text-white leading-tight mb-16"
             style={{ fontFamily: "'Roboto Slab', serif" }}
           >
             {t('why.heading').split('\n').map((line: string, i: number) => (
@@ -515,46 +515,50 @@ export default function App() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 w-full max-w-xl">
-              <div className="rounded-[28px] bg-white/5 border border-white/10 p-6 backdrop-blur-md">
+              <a
+                href="tel:+358404608554"
+                className="rounded-[28px] bg-white/5 border border-white/10 p-6 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-[#da2128]/50 hover:-translate-y-1 cursor-pointer"
+              >
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#da2128]/10 text-[#da2128] mb-5">
                   <Phone className="w-5 h-5" />
                 </div>
                 <p className="text-sm uppercase tracking-[0.2em] text-white/50 mb-2">{t('contact.labels.phone')}</p>
                 <p className="text-white font-semibold">040 460 8554</p>
-              </div>
-              <div className="min-w-0 rounded-[28px] bg-white/5 border border-white/10 p-6 backdrop-blur-md">
+              </a>
+              <a
+                href="mailto:info@asapautohuolto.fi"
+                className="min-w-0 rounded-[28px] bg-white/5 border border-white/10 p-6 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-[#da2128]/50 hover:-translate-y-1 cursor-pointer"
+              >
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#da2128]/10 text-[#da2128] mb-5">
                   <Mail className="w-5 h-5" />
                 </div>
                 <p className="text-sm uppercase tracking-[0.2em] text-white/50 mb-2">{t('contact.labels.email')}</p>
-                <a
-                  href="mailto:info@asapautohuolto.fi"
-                  className="text-white font-semibold break-words whitespace-normal hover:text-[#da2128]"
-                >
-                  info@asapautohuolto.fi
-                </a>
-              </div>
-              <div className="rounded-[28px] bg-white/5 border border-white/10 p-6 backdrop-blur-md">
+                <p className="text-white font-semibold break-words whitespace-normal">info@asapautohuolto.fi</p>
+              </a>
+              <a
+                href="https://maps.google.com/?q=Sahaajankatu+39,+00880+Helsinki"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-[28px] bg-white/5 border border-white/10 p-6 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-[#da2128]/50 hover:-translate-y-1 cursor-pointer"
+              >
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#da2128]/10 text-[#da2128] mb-5">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <p className="text-sm uppercase tracking-[0.2em] text-white/50 mb-2">{t('contact.labels.address')}</p>
                 <p className="text-white font-semibold">Sahaajankatu 39 00880 Helsinki</p>
-              </div>
-              <div className="min-w-0 rounded-[28px] bg-white/5 border border-white/10 p-6 backdrop-blur-md">
+              </a>
+              <a
+                href="https://wa.me/358404608554"
+                target="_blank"
+                rel="noreferrer"
+                className="min-w-0 rounded-[28px] bg-white/5 border border-white/10 p-6 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-[#da2128]/50 hover:-translate-y-1 cursor-pointer"
+              >
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#da2128]/10 text-[#da2128] mb-5">
                   <MessageCircle className="w-5 h-5" />
                 </div>
                 <p className="text-sm uppercase tracking-[0.2em] text-white/50 mb-2">{t('contact.labels.whatsapp')}</p>
-                <a
-                  href="https://wa.me/358404608554"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-white font-semibold break-words whitespace-normal hover:text-[#da2128]"
-                >
-                  +358 45 460 8554
-                </a>
-              </div>
+                <p className="text-white font-semibold break-words whitespace-normal">+358 45 460 8554</p>
+              </a>
             </div>
           </div>
 
