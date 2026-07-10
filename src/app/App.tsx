@@ -409,6 +409,18 @@ export default function App() {
       {/* ── BRAND LOGO MARQUEE ── */}
       <section className="bg-[#f5f4f2] py-8 border-b border-[#1a1210]/10">
         <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-4 rounded-xl border border-[#1a1210]/10 bg-white/70 px-4 py-3 text-xs leading-relaxed text-[#6b6560]">
+            <p>
+              <span className="font-semibold text-[#1a1210]">FI:</span> Kaikki logot kuuluvat
+              omistajilleen ja ne esitetaan vain viitteellisessa tarkoituksessa. Taman sivun logosarja
+              ei tarkoita virallista kumppanuutta ilman erillista ilmoitusta.
+            </p>
+            <p className="mt-1">
+              <span className="font-semibold text-[#1a1210]">EN:</span> All logos belong to their
+              respective owners and are shown for reference purposes only. This logo strip does not
+              imply an official partnership unless explicitly stated.
+            </p>
+          </div>
           <div className="overflow-hidden rounded-2xl border border-[#1a1210]/10 bg-white/70 py-6 shadow-sm">
             <div className="logo-marquee flex w-max items-center gap-6">
               {[...brandLogos, ...brandLogos].map((src, index) => (
