@@ -30,8 +30,26 @@ const REASONS = [
   { number: "04", key: 'reasons.r4' },
 ];
 
-const brandLogoModules = import.meta.glob("../imports/brand-logos/*.png", { eager: true, query: '?url', import: 'default' });
-const brandLogos = Object.values(brandLogoModules).filter((src): src is string => typeof src === "string");
+const CAR_BRANDS = [
+  "Audi",
+  "BMW",
+  "Mercedes-Benz",
+  "Volkswagen",
+  "Volvo",
+  "Skoda",
+  "Toyota",
+  "Honda",
+  "Nissan",
+  "Mazda",
+  "Kia",
+  "Hyundai",
+  "Peugeot",
+  "Renault",
+  "Opel",
+  "Ford",
+  "Mini",
+  "Land Rover",
+];
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -406,33 +424,29 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── BRAND LOGO MARQUEE ── */}
+      {/* ── BRAND TEXT MARQUEE ── */}
       <section className="bg-[#f5f4f2] py-8 border-b border-[#1a1210]/10">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-4 rounded-xl border border-[#1a1210]/10 bg-white/70 px-4 py-3 text-xs leading-relaxed text-[#6b6560]">
-            <p>
-              <span className="font-semibold text-[#1a1210]">FI:</span> Kaikki logot kuuluvat
-              omistajilleen ja ne esitetaan vain viitteellisessa tarkoituksessa. Taman sivun logosarja
-              ei tarkoita virallista kumppanuutta ilman erillista ilmoitusta.
+          <div className="mb-4 rounded-xl border border-[#1a1210]/10 bg-white/70 px-4 py-4">
+            <p className="text-[#da2128] text-xs font-semibold tracking-[0.2em] uppercase mb-2">
+              {t('sections.brands.label')}
             </p>
-            <p className="mt-1">
-              <span className="font-semibold text-[#1a1210]">EN:</span> All logos belong to their
-              respective owners and are shown for reference purposes only. This logo strip does not
-              imply an official partnership unless explicitly stated.
-            </p>
+            <h3
+              className="text-xl md:text-2xl font-black text-[#1a1210]"
+              style={{ fontFamily: "'Roboto Slab', serif" }}
+            >
+              {t('sections.brands.heading')}
+            </h3>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-[#1a1210]/10 bg-white/70 py-6 shadow-sm">
-            <div className="logo-marquee flex w-max items-center gap-6">
-              {[...brandLogos, ...brandLogos].map((src, index) => (
+
+          <div className="overflow-hidden rounded-2xl border border-[#1a1210]/10 bg-white/70 py-4 shadow-sm">
+            <div className="logo-marquee flex w-max items-center gap-4 px-4">
+              {[...CAR_BRANDS, ...CAR_BRANDS].map((brand, index) => (
                 <div
-                  key={`${src}-${index}`}
-                  className="group flex h-20 w-36 shrink-0 items-center justify-center rounded-xl bg-white/90 p-3 shadow-sm ring-1 ring-black/5 transition-all duration-300 hover:z-10 hover:scale-115 hover:-translate-y-1"
+                  key={`${brand}-${index}`}
+                  className="shrink-0 rounded-full border border-[#1a1210]/15 bg-white px-4 py-2 text-sm font-semibold text-[#1a1210] shadow-sm"
                 >
-                  <img
-                    src={src}
-                    alt={`Brand logo ${index + 1}`}
-                    className="h-full w-full object-contain"
-                  />
+                  {brand}
                 </div>
               ))}
             </div>

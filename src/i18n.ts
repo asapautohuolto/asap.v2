@@ -30,6 +30,10 @@ export const translations = {
     sections: {
       services: {
         heading: 'Kaikki autosi\ntarvitsemat palvelut'
+      },
+      brands: {
+        label: 'Merkit',
+        heading: 'Huollamme noita merkkeja ja paljon muuta'
       }
     },
     why: {
@@ -89,6 +93,10 @@ export const translations = {
     sections: {
       services: {
         heading: 'All the services your car needs'
+      },
+      brands: {
+        label: 'Brands',
+        heading: 'We repair those brands and more'
       }
     },
     why: {
